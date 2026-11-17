@@ -1,0 +1,26 @@
+/* A quieter, higher-contrast field guide. */
+:root{--ink:#202422;--line:#e3e6e3;--muted:#626b65;--paper:#fff;--soft:#f5f7f5;--accent:#274b39}
+html[data-theme=light] .sidebar{background:#fafbfa;border-color:#e1e5e1}
+.sidebar nav a{min-height:44px;padding:11px 13px;transition:background-color .15s,color .15s}
+html[data-theme=light] .sidebar nav a{color:#505b54}
+html[data-theme=light] .sidebar nav a.selected{background:#e5ebe6;color:#193e2a}
+.section{padding-top:54px}.section-head{padding-bottom:22px;margin-bottom:24px}
+.section-head h2,.reset-heading h2{font-size:34px;letter-spacing:-.03em}
+.library-banner,.skill-hero{min-height:0;padding:25px 30px;background:#f5f7f5;border:1px solid #e3e7e3}
+.library-banner h3,.skill-hero h3{font-size:22px;margin:10px 0 6px}.banner-star,.skill-hero-symbol{font-size:64px}
+.toolbar,.skill-filters{border-top:1px solid #aeb7af;border-bottom:1px solid #dfe4df;padding:12px 0}
+.filters{display:flex;flex-wrap:wrap;gap:5px}.filters button{border-radius:4px;font-size:12px;padding:9px 12px}
+.toolbar input,.skill-toolbar input{border:1px solid #cbd2cc;border-radius:5px;background:#fff;padding:11px 13px}
+.cards{gap:0}.cards>.card{padding:22px 12px;border-bottom:1px solid #e0e5e0}
+.card>p{font-size:13px;line-height:1.75;color:#526057}.card>.quota{font-size:17px}.card .claim-steps summary{color:#365a42}
+.card .benefit-details{background:#f5f7f5;border-radius:4px;padding:15px 17px}
+.skill-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.skill-card{background:#fff;border-color:#dce2dc;border-radius:5px;padding:22px 24px}.skill-card h3{margin:16px 0 6px}.skill-card p{font-size:13px;color:#505e54}.skill-card code{background:#f4f6f4;border-radius:3px}.skill-links{gap:10px}
+.skill-links button,.card-actions button,.bundle-button{border-radius:4px}.plan-overview>div,.plan-row,.plan-empty,.calendar-card,.event-card,.service-card{border-radius:5px}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible,textarea:focus-visible{outline:3px solid #628e6e;outline-offset:3px}
+html[data-theme=dark]{--ink:#f1f2ef;--line:#414642;--muted:#bdc5be;--paper:#1e211f;--soft:#272b28;--accent:#c5ddc9}
+html[data-theme=dark] .library-banner,html[data-theme=dark] .skill-hero{background:#242825;border-color:#404740}
+html[data-theme=dark] .skill-card{background:#202420;border-color:#414a42}html[data-theme=dark] .skill-card p{color:#cbd3cc}html[data-theme=dark] .skill-card code{background:#171b18;color:#e0e9e1}
+html[data-theme=dark] .cards>.card{border-color:#3b443d}html[data-theme=dark] .card .benefit-details{background:#272d28}html[data-theme=dark] .card .claim-steps summary{color:#c2d9c6}
+@media(max-width:800px){.section{padding-top:38px}.sidebar nav a{min-height:40px}.library-banner,.skill-hero{padding:22px}.skill-grid{grid-template-columns:1fr}}
+@media(max-width:500px){.section-head h2,.reset-heading h2{font-size:28px}.skill-toolbar input,.toolbar input{width:100%}.cards>.card{padding:20px 8px}.skill-card{padding:19px}.skill-batch-controls label{width:100%;flex-wrap:wrap}}
+@media(prefers-reduced-motion:reduce){.sidebar nav a{transition:none}}

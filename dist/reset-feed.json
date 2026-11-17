@@ -1,0 +1,35 @@
+{
+  "schema": 2,
+  "products": {
+    "codex": {
+      "state": "ok",
+      "checkedAt": "2026-11-17T02:53:35.170830+00:00",
+      "lastSuccessAt": "2026-11-17T02:53:35.170830+00:00",
+      "sourceUrl": "https://status.openai.com/history.atom",
+      "posts": []
+    },
+    "claude": {
+      "state": "ok",
+      "checkedAt": "2026-11-17T02:53:37.299146+00:00",
+      "lastSuccessAt": "2026-11-17T02:53:37.299146+00:00",
+      "sourceUrl": "https://status.claude.com/history.atom",
+      "posts": [
+        {
+          "id": "tag:status.claude.com,2005:Incident/31614017",
+          "text": "Elevated errors on platform.claude.com",
+          "url": "https://status.claude.com/incidents/978mjkgw6mh7",
+          "createdAt": "2026-10-13T18:00:04Z",
+          "status": "官方状态公告 · 待核验",
+          "source": "https://status.claude.com/history.atom"
+        }
+      ]
+    },
+    "grok": {
+      "state": "error",
+      "checkedAt": "2026-11-17T02:53:38.655247+00:00",
+      "sourceUrl": "https://status.x.ai/history.atom",
+      "error": "HTTP Error 404: Not Found",
+      "posts": []
+    }
+  }
+}

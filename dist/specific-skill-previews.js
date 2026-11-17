@@ -1,0 +1,57 @@
+/* Purpose-specific editorial illustrations, using fictional sample data. */
+const specificExamples={
+'Grill Me':['决策访谈','目标用户是谁？','首批用户是内容创作者。','成功标准是什么？','7 天内完成首份作品。'],
+'Improve Codebase Architecture':['架构审查','问题：订单逻辑散落在页面','建议：提取订单领域服务','受影响：结算页、订单页','验证：保留支付状态测试'],
+'Remotion Best Practices':['React 视频工程','00:00　片头与标题','00:03　产品功能展示','00:10　数据图表动画','00:15　片尾与行动按钮'],
+'Web Design Guidelines':['界面审查报告','⚠ 搜索框缺少明确标签','⚠ 按钮焦点状态不明显','✓ 主标题层级正确','建议：增加可见焦点样式'],
+'Webapp Testing':['网页测试报告','✓ 打开首页','✓ 搜索「笔记本」','✓ 点击加入清单','✓ 检查空结果提示'],
+'Word 文档处理':['项目周报.docx','本周进展','完成首页原型与需求梳理。','待解决问题','确认数据来源与交付时间。'],
+'A/B Testing':['实验设计','A 版本：立即开始','B 版本：免费试用','主要指标：注册完成率','结果：待收集样本'],
+'代码库知识梳理':['代码库结构','src/pages　页面入口','src/services　数据服务','src/components　通用组件','入口 → 服务 → 数据存储'],
+'Superpowers':['开发任务板','需求探索　→　澄清范围','实施计划　→　拆分任务','测试驱动　→　验证行为','代码审查　→　交付检查'],
+'grill-with-docs':['方案访谈记录','问题：谁维护采集规则？','回答：由运营每周复核。','决策：规则集中存储。','术语：候选公告需人工确认。'],
+'grilling':['需求评审','Q1　哪些用户先使用？','Q2　没有数据时显示什么？','Q3　何时需要人工确认？','输出：待解决的决策清单'],
+'prototype':['交互原型','收藏夹　　最近浏览','搜索 Skill 或 Token 福利','前端设计　　＋ 添加','演示：状态切换与空列表'],
+'ui-taste':['界面设计走查','页面层级：标题 → 内容 → 行动','排版：统一字号和行距','状态：补充焦点与空状态','输出：具体修改建议'],
+'code-review':['代码审查','src/search.ts　第 24 行','问题：过滤条件未传入查询','影响：结果可能显示旧数据','建议：增加条件与回归测试'],
+'triage':['Issue 分流看板','新反馈：搜索结果不更新','分类：功能缺陷','待确认：复现步骤与浏览器','下一步：转入开发待办'],
+'domain-modeling':['领域模型','用户 User','收藏 Collection','技能 Skill','关系：用户 → 收藏 → 技能'],
+'codebase-design':['模块设计','公共接口：search(query)','隐藏细节：索引和缓存','输入：关键词、筛选条件','输出：匹配项目与总数'],
+'writing-for-agents':['AGENTS.md','适用范围：当前项目','运行：npm run test','约束：不要修改线上配置','完成前：报告测试结果'],
+'resolving-merge-conflicts':['合并冲突','<<<<<<< 当前分支','标题：我的技能清单','=======','标题：收藏的技能　>>>>>>>'],
+'git-guardrails-claude-code':['命令保护','命令：git reset --hard','状态：已拦截','原因：可能覆盖未提交修改','下一步：检查工作区状态'],
+'setup-pre-commit':['提交前检查','✓ 代码格式','✓ 类型检查','✓ 单元测试','通过后继续提交'],
+'claude-handoff':['会话交接','目标：完善 Skill 目录','已完成：卡片与筛选','待处理：替换示意作品','验证：运行本地预览'],
+'brainstorming':['需求讨论','目标：让用户快速发现技能','受众：第一次使用 Agent 的人','方案：按任务分类和预览','待确认：安装工具与范围'],
+'Writing Plans':['实施计划','01 检查现有技能数据','02 设计效果预览','03 接入卡片与搜索','04 测试桌面显示'],
+'Executing Plans':['执行记录','步骤 1　读取项目结构 ✓','步骤 2　实现预览组件 ✓','步骤 3　验证交互 →','检查点：汇报测试结果'],
+'Test Driven Development':['测试驱动开发','RED　筛选条件测试失败','GREEN　补全筛选逻辑','REFACTOR　简化重复代码','验证：重新运行测试'],
+'Verification Before Completion':['完成前验证','命令：npm test','结果：测试通过','检查：页面可正常打开','交付：列出未覆盖范围'],
+'Requesting Code Review':['审查请求','变更：支持 Skill 分类搜索','触发：输入关键词后筛选','重点：状态同步与空结果','验证：搜索和清除输入'],
+'lark-calendar':['日历 · 本周','周一 09:30　项目例会','周二 14:00　设计评审','周三 16:00　进度复盘','周五 11:00　工作总结'],
+'lark-okr':['季度目标','O1　完善技能目录','KR1　完成分类与搜索','KR2　上线 10 个示例','进度：示意数据'],
+'lark-base':['多维表格','项目　　　状态　　 负责人','卡片设计　进行中　 小林','数据核对　待开始　 小陈','筛选视图：进行中的任务'],
+'lark-approval':['审批待办','事项：项目采购申请','状态：等待负责人审批','提交人：示例成员','操作：查看申请详情'],
+'lark-vc-agent':['会议纪要','主题：产品周会','讨论：明确首批功能范围','决议：先完成桌面预览','待办：整理反馈并复核'],
+'lark-workflow-standup-report':['今日工作摘要','09:30　项目同步会议','14:00　设计评审','待办：整理技能清单','待办：核对来源链接'],
+'lark-doc':['飞书文档','项目介绍','目标：整理 AI 工具与技能。','进度：目录与筛选已完成。','协作：邀请成员补充资料。'],
+'lark-note':['阅读笔记','主题：如何设计好用的目录','要点：先展示用户关心的内容','灵感：清晰标签与效果预览','关联：产品设计讨论'],
+'lark-markdown':['Markdown 排版','## 项目目标','- 整理技能和使用场景','- 支持搜索、分类与收藏','转换后：标题与列表保留'],
+'paper-context-resolver':['论文复现记录','论文：模型评估方法','代码入口：train.py','配置：configs/default.yaml','待确认：数据集预处理'],
+'azure-quotas':['云资源配额','资源　　 使用量 / 上限','CPU　　　12 / 24 核','公网 IP　 2 / 5 个','区域：示例数据'],
+'azure-cloud-migrate':['云迁移评估','源：Web 应用与数据库','目标：托管应用与数据库','待评估：网络、费用、权限','输出：迁移步骤清单'],
+'azure-kubernetes':['Kubernetes 部署','集群：demo-cluster','节点池：2 个节点','工作负载：Web 服务','检查：网络与访问权限'],
+'supabase-postgres-best-practices':['SQL 查询建议','查询：按用户检索订单','检查：EXPLAIN 执行计划','建议：为 user_id 添加索引','验证：对比查询计划'],
+'Canvas Design':['海报作品','FIELD NOTES / 2026','让想法，','在这里生长。','一份关于创作的视觉记录'],
+'Algorithmic Art':['生成艺术作品','GENERATIVE ART / 01','参数：圆形、重复、旋转','配色：森林绿 × 奶白','输出：可复现的图形'],
+'Brand Guidelines':['品牌视觉规范','TOKEN FIELD','主色　森林绿 / 奶白','字体　标题 / 正文','应用　卡片、按钮与图标'],
+'Theme Factory':['主题样式','THEME / FOREST','主色 #294636','辅助色 #DCE9DF','应用：封面、图表、正文'],
+'Internal Comms':['团队周报','本周：完成 Skill 效果预览','进展：完成分类与卡片布局','问题：部分内容待核对','下周：收集反馈并优化'],
+'AIHOT':['AI 动态摘要','今日重点：模型与产品更新','来源：官方公告与公开报道','时间：最近 24 小时','输出：摘要与原文链接']
+};
+const specializedBase=genericVisual;
+genericVisual=function(item){const v=specificExamples[item.name];if(!v)return specializedBase(item);const esc=demoEscape;const category=item.category;const media=/海报|艺术|品牌|主题/.test((item.tags||[]).join(' '));return `<div class="work-preview example-specific ${media?'example-poster':''}" aria-label="${esc(item.name)} 的效果示意"><div class="example-top"><span>${media?'DESIGN STUDY':'▤　示例作品'}</span><span>${esc(category)}</span></div><div class="example-content"><small>${esc(item.owner||'SKILL')} / SAMPLE</small><h4>${esc(v[0])}</h4><div class="example-lines">${v.slice(1).map((line,i)=>`<div><span>${String(i+1).padStart(2,'0')}</span><p>${esc(line)}</p></div>`).join('')}</div></div></div>`};
+renderSkills();
+/* Existing listeners captured the earlier renderer; repaint previews after filtering. */
+document.querySelector('#skill-search').addEventListener('input',renderSkills);
+document.querySelectorAll('[data-skill-filter]').forEach(button=>button.addEventListener('click',renderSkills));
