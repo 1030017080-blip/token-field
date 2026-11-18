@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@v6
       - name: Check local HTML assets
         run: python3 scripts/check-static.py
-      - uses: actions/upload-pages-artifact@v4
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: dist
   deploy:
