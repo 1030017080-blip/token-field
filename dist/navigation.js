@@ -1,1 +1,19 @@
-const pages=['catalog','benefits','playbook','automation','reset','skills','products','plan','feedback','about','opensource'];function showPage(){let hash=location.hash.slice(1);let page=hash==='support'?'products':pages.includes(hash)?hash:'catalog';document.querySelectorAll('main > section').forEach(el=>{el.hidden=el.id!==page});document.querySelectorAll('.sidebar nav a').forEach(a=>a.classList.toggle('selected',a.getAttribute('href')==='#'+page));window.scrollTo(0,0);if(hash==='support')requestAnimationFrame(()=>document.querySelector('#support').scrollIntoView())}window.addEventListener('hashchange',showPage);showPage();document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(b.dataset.copy);b.textContent='已复制'}catch{b.textContent='请手动复制 '+b.dataset.copy}}));
+const pages = ['catalog', 'benefits', 'playbook', 'automation', 'reset', 'skills', 'plan', 'feedback', 'about', 'opensource'];
+
+function showPage() {
+  const hash = location.hash.slice(1);
+  const page = pages.includes(hash) ? hash : 'catalog';
+  if (hash === 'products' || hash === 'support') {
+    history.replaceState(history.state, '', '#catalog');
+  }
+  document.querySelectorAll('main > section').forEach(section => {
+    section.hidden = section.id !== page;
+  });
+  document.querySelectorAll('.sidebar nav a').forEach(link => {
+    link.classList.toggle('selected', link.getAttribute('href') === '#' + page);
+  });
+  window.scrollTo(0, 0);
+}
+
+window.addEventListener('hashchange', showPage);
+showPage();

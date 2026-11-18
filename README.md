@@ -2,7 +2,7 @@
 
 AI 福利与 Agent Skill 目录，包含资源搜索、技能效果示意、我的清单、教程、官方公告线索与社区入口。
 
-[在线预览](https://1030017080-blip.github.io/token-field/) · [商品展示](https://1030017080-blip.github.io/token-field/#products)
+[在线预览](https://1030017080-blip.github.io/token-field/)
 
 ## 本地运行
 
@@ -17,7 +17,7 @@ python -m http.server 4188 --bind 127.0.0.1 --directory dist
 ## 改成你的站点
 
 - `dist/community.js`：反馈表单、GitHub 与社区入口。公开模板的反馈地址为空，请填写自己的飞书表单分享链接。
-- `dist/guides-shop.js`：教程与商品展示，价格及联系方式请自行替换。
+- `dist/guides.js`：教程内容和分类。
 - `dist/skills-market.js`：技能目录；Star 与热度是历史快照。
 - `dist/app.js`：福利目录及领取说明。
 
