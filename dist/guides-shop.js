@@ -13,9 +13,9 @@ let filter='全部';const list=automation.querySelector('#guide-list'),query=aut
   const supportHeading = support.querySelector('h2');
   const defaultHeading = supportHeading.textContent;
   const offers = [
-    { name: 'Codex Team 直充', price: 109, delivery: '充值到现有账号' },
-    { name: 'PLUS 直充', price: 129, delivery: '充值到现有账号' },
-    { name: '成品号', price: 159, delivery: '交付成品账号' },
+    { name: 'Codex Team 直充', price: 109, poster: "product-team-standard.png", width: 1289, height: 1221, delivery: '充值到现有账号' },
+    { name: 'PLUS 直充', price: 129, poster: "product-plus.png", width: 1289, height: 1221, delivery: '充值到现有账号' },
+    { name: '成品号', price: 159, poster: "offer-account.png", width: 840, height: 560, delivery: '交付成品账号' },
   ];
 
   products.innerHTML = `
@@ -26,6 +26,9 @@ let filter='全部';const list=automation.querySelector('#guide-list'),query=aut
     <div class="shop-grid">
       ${offers.map((offer, index) => `
         <article aria-labelledby="offer-title-${index}">
+          <a class="offer-poster" href="${offer.poster}" target="_blank" rel="noopener" aria-label="放大查看${offer.name}商品图">
+            <img src="${offer.poster}" alt="" width="${offer.width}" height="${offer.height}" decoding="async">
+          </a>
           <h3 id="offer-title-${index}">${offer.name}</h3>
           <p class="offer-price"><span>¥</span>${offer.price}</p>
           <p class="offer-delivery">${offer.delivery}</p>
