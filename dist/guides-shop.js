@@ -8,7 +8,55 @@ const guides=[
 const automation=document.querySelector('#automation');
 automation.innerHTML=`<div class="guide-heading"><h2>把重复领取，变成有序的日常</h2><p>从基础提醒到官方接口，按平台规则选择适合自己的方法。</p></div><div class="guide-layout"><div><label class="guide-search"><span>⌕</span><input id="guide-query" type="search" placeholder="搜索教程、平台或关键词…" aria-label="搜索教程"></label><div class="guide-filters" role="group" aria-label="教程分类">${['全部','入门','定时提醒','官方接口','浏览器辅助'].map((x,i)=>`<button type="button" data-guide-filter="${x}" class="${i?'':'active'}">${x}</button>`).join('')}</div><div id="guide-list"></div></div><aside class="guide-aside"><h3>✓　开始前检查</h3><p>在设置自动化之前，先确认以下事项。</p><div><b>了解官方规则</b><p>核实活动是否仍有效、是否允许自动操作，以及额度是否自动刷新。</p></div><div><b>保护本地凭证</b><p>密码、API Key 和浏览器登录态由自己保管，不要提交到公开仓库。</p></div><div><b>预留人工确认</b><p>登录、验证码和最终到账检查由本人完成。</p></div><a href="#plan">打开我的清单 →</a></aside></div>`;
 let filter='全部';const list=automation.querySelector('#guide-list'),query=automation.querySelector('#guide-query');function renderGuides(){const q=query.value.trim().toLowerCase();let matches=guides.filter(g=>(filter==='全部'||g.category===filter)&&(`${g.title} ${g.lead} ${g.category} ${g.body}`.toLowerCase().includes(q)));list.innerHTML=matches.length?matches.map((g,i)=>`<article class="guide-row">${g.visual}<div class="guide-summary"><h3>${String(guides.indexOf(g)+1).padStart(2,'0')} ${g.title}</h3><p>${g.lead}</p><span>${g.meta}</span><details><summary>查看教程 <span>↓</span></summary><div class="guide-detail">${g.body}</div></details></div></article>`).join(''):'<p class="guide-empty">没有找到相关教程，请尝试其他关键词。</p>'}query.addEventListener('input',renderGuides);automation.querySelectorAll('[data-guide-filter]').forEach(b=>b.addEventListener('click',()=>{filter=b.dataset.guideFilter;automation.querySelectorAll('[data-guide-filter]').forEach(x=>x.classList.toggle('active',x===b));renderGuides()}));renderGuides();
-const products=document.querySelector('#products'),support=products.querySelector('#support');
-const offers=[{name:'Codex Team 直充',price:'109',delivery:'账号直充'},{name:'PLUS 直充',price:'129',delivery:'账号直充'},{name:'成品号',price:'159',delivery:'成品账号'}];
-products.innerHTML=`<div class="guide-heading"><h2>AI 商品展示</h2><p>选择需要的商品，联系客服了解交付方式与使用细节。</p></div><div class="product-notice">服务期限、适用条件、交付与售后请咨询客服确认。</div><div class="shop-grid">${offers.map(x=>`<article><div class="shop-card-head"><span class="shop-mark">✳</span><div><h3>${x.name}</h3><p>商品详情请联系客服咨询</p></div></div><dl><div><dt>交付方式</dt><dd>${x.delivery}，具体请咨询客服</dd></div><div><dt>服务期限</dt><dd>咨询客服</dd></div><div><dt>价格</dt><dd>¥ ${x.price}</dd></div></dl><a href="#support">联系客服咨询 →</a></article>`).join('')}</div><div class="shop-process"><span><b>01　选择商品</b><small>选择需要的服务</small></span><span><b>02　咨询需求</b><small>向客服说明商品名称</small></span><span><b>03　确认方案</b><small>核对交付、期限与售后</small></span></div><div id="support-slot"></div><p class="footnote">本页仅展示商品，未接入下单或支付。</p>`;products.querySelector('#support-slot').replaceWith(support);
+  const products = document.querySelector('#products');
+  const support = products.querySelector('#support');
+  const supportHeading = support.querySelector('h2');
+  const defaultHeading = supportHeading.textContent;
+  const offers = [
+    { name: 'Codex Team 直充', price: 109, delivery: '充值到现有账号' },
+    { name: 'PLUS 直充', price: 129, delivery: '充值到现有账号' },
+    { name: '成品号', price: 159, delivery: '交付成品账号' },
+  ];
+
+  products.innerHTML = `
+    <div class="guide-heading shop-heading">
+      <h2>AI 商品展示</h2>
+      <p>比较价格与交付方式，选好后可通过 QQ 咨询。</p>
+    </div>
+    <div class="shop-grid">
+      ${offers.map((offer, index) => `
+        <article aria-labelledby="offer-title-${index}">
+          <h3 id="offer-title-${index}">${offer.name}</h3>
+          <p class="offer-price"><span>¥</span>${offer.price}</p>
+          <p class="offer-delivery">${offer.delivery}</p>
+          <a class="offer-contact" data-offer="${index}" href="#support">
+            咨询此商品 <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+      `).join('')}
+    </div>
+    <p class="shop-terms">服务期限、适用条件、交付细节与售后请向客服确认。本站仅提供商品展示与咨询。</p>`;
+
+  support.tabIndex = -1;
+  support.setAttribute('aria-labelledby', 'shop-support-title');
+  supportHeading.id = 'shop-support-title';
+  products.append(support);
+
+  let selectedOffer;
+  products.querySelectorAll('.offer-contact').forEach(link => {
+    const offer = offers[Number(link.dataset.offer)];
+    link.setAttribute('aria-label', '咨询' + offer.name);
+    link.addEventListener('click', () => {
+      selectedOffer = offer;
+      supportHeading.textContent = '咨询' + offer.name;
+      support.focus({ preventScroll: true });
+      if (location.hash === '#support') support.scrollIntoView();
+    });
+  });
+
+  window.addEventListener('hashchange', () => {
+    const showOffer = location.hash === '#support' && selectedOffer;
+    supportHeading.textContent = showOffer ? '咨询' + selectedOffer.name : defaultHeading;
+    selectedOffer = undefined;
+  });
 })();
