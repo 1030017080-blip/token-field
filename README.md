@@ -33,6 +33,8 @@ Fork 后，在 **Settings → Pages → Build and deployment → Source** 选择
 
 ## 数据与示意
 
+2026-11-18 的福利更新参考了 [FreeEgg 鸡蛋榜](https://freeegg.top/#ranking) 和微信小程序「赛博鸡蛋篮」。福利卡片链接到厂商页面，额度、限制和活动时间按厂商公开说明整理。
+
 Skill 预览为 HTML 效果示意，非实际执行产物。公告采集读取官方公开状态源，关键词匹配仅为线索，不代表额度已重置或到账。活动规则以官方页面为准。
 
 ## 开源
