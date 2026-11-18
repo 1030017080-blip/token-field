@@ -15,7 +15,7 @@ let filter='全部';const list=automation.querySelector('#guide-list'),query=aut
   const offers = [
     { name: 'Codex Team 直充', price: 109, poster: "product-team-standard.png", width: 1289, height: 1221, delivery: '充值到现有账号' },
     { name: 'PLUS 直充', price: 129, poster: "product-plus.png", width: 1289, height: 1221, delivery: '充值到现有账号' },
-    { name: '成品号', price: 159, poster: "offer-account.png", width: 840, height: 560, delivery: '交付成品账号' },
+    { name: '成品号', price: 159, poster: "product-plus.png", width: 1289, height: 1221, delivery: '交付成品账号' },
   ];
 
   products.innerHTML = `
